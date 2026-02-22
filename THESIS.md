@@ -197,6 +197,16 @@ This validates the core thesis argument: multi-layer detection with orthogonal s
 - **Key finding:** Complementarity maximized when human/AI accuracies similar and decisions not correlated
 - **My takeaway for Chapter 5:** This gives me concrete quantified evidence for human-AI collaboration benefits. The "confirmation tree" structure could inform my staged detection pipeline. Cost reduction angle important for deployment arguments.
 
+### 🚨 ZERO-SHOT BENCHMARK: NO UNIVERSAL DETECTOR (Feb 22) - NEW!
+- Ren et al. (2602.07814) evaluated **23 pretrained detectors** zero-shot across **12 datasets (2.6M images, 291 generators)**
+- **No universal winner:** Rankings UNSTABLE (Spearman ρ: 0.01-0.87 between dataset pairs!)
+- **37 percentage-point gap** between best detector (75.0%) and worst (37.5%)
+- **Modern generators DEFEAT detectors:** Flux Dev, Firefly v4, Midjourney v7 → only **18-30% average accuracy**
+- **Training alignment critical:** 20-60% variance within same architecture based on training data
+- Statistical proof: Friedman χ²=121.01, p<10⁻¹⁶
+- **Authors' conclusion:** "One-size-fits-all detector paradigm" is challenged
+- **My takeaway:** This is the STRONGEST validation for my multi-layer approach. Single-signal content detectors are fundamentally unstable; spread patterns provide necessary orthogonal signal that is invariant to generator variations.
+
 ### PHYSIOLOGICAL CUES GENERALIZE (Feb 21) - NEW!
 - BreathNet (2602.13596) uses breathing sounds as physiological cues for audio deepfake detection
 - **In-the-Wild EER: 4.70%** - excellent real-world performance
@@ -287,6 +297,8 @@ This validates the core thesis argument: multi-layer detection with orthogonal s
 14. **NEW (Feb 21):** Get Hybrid Confirmation Tree deepfake dataset details for Chapter 5 empirical support
 15. **NEW (Feb 21):** Check BreathNet's In-the-Wild dataset availability (4.70% EER baseline)
 16. **NEW (Feb 21):** Consider provenance (Origin Lens) as future work layer
+17. **NEW (Feb 22):** Get full zero-shot benchmark study methodology (2602.07814) - 291 generators comprehensive
+18. **NEW (Feb 22):** Consider Short-MGAA edge deployment approach for real-time audio detection
 
 ## Papers to Read
 See memory/papers.md - started tracking!
