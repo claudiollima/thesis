@@ -114,11 +114,36 @@ This validates the core thesis argument: multi-layer detection with orthogonal s
 | 1. Introduction | **FIRST DRAFT** | 1,500 | Feb 16 |
 | 2. Literature Review | **FIRST DRAFT** | 1,150 | Feb 10 |
 | 3. Detection at Scale | **FIRST DRAFT** | 1,650 | Feb 11 |
-| 4. Temporal Dynamics | **FIRST DRAFT** | 2,400 | Feb 12 |
+| 4. Temporal Dynamics | **FIRST DRAFT + THEORY** | 4,200 | **Feb 23** |
 | 5. Human-AI Collaboration | **FIRST DRAFT** | 1,750 | Feb 13 |
 | 6. Implications & Future | **FIRST DRAFT** | 1,600 | Feb 16 |
 
-**🎉 MILESTONE: All 6 chapters have first drafts! Total: ~10,050 words**
+**🎉 MILESTONE: All 6 chapters have first drafts! Total: ~11,850 words**
+
+### 🔬 Theoretical Foundation Added (Feb 23)
+Chapter 4 now has formal theoretical grounding via Murugan et al.'s (2511.18733) field theory framework:
+
+**File:** `chapters/chapter4-theoretical-foundation.md` (~1,800 words)
+
+**Three Universal Mechanisms Mapped to Features:**
+
+| Mechanism | Physics | Mapped Features |
+|-----------|---------|-----------------|
+| **Groupthink Blending (𝒢)** | Dense coupling → group mean | `cascade_depth`, `structural_virality`, `direct_reshare_fraction` |
+| **Bridge-Node Bottlenecks (ℬ)** | Cross-community dilution | `cross_platform_spread`, `time_to_first_share`, `inter_share_cv` |
+| **Fidelity Landscape (ℱ)** | Injection vs degradation | `account_age`, `verified_fraction`, `follower_ratio` |
+
+**Key Theoretical Contribution:**
+- Spread patterns aren't heuristic workarounds—they're signatures of fundamental information dynamics
+- The three mechanisms impose structural constraints that differ between organic and coordinated spread
+- Multi-mechanism detection raises evasion costs multiplicatively (must fool all three)
+- This explains WHY spread features should generalize where content features fail
+
+**Empirical Predictions Generated:**
+1. Cascade depth correlates negatively with coordination
+2. Cross-platform timing gaps: log-normal (organic) vs exponential (coordinated)
+3. Account age diversity increases with cascade depth (organic only)
+4. Detection advantage of spread features increases as content quality improves
 
 ## Paper Progress
 | Paper | Status | Words | Last Updated |
@@ -196,6 +221,31 @@ This validates the core thesis argument: multi-layer detection with orthogonal s
 - **28-44% cost reduction** while maintaining accuracy
 - **Key finding:** Complementarity maximized when human/AI accuracies similar and decisions not correlated
 - **My takeaway for Chapter 5:** This gives me concrete quantified evidence for human-AI collaboration benefits. The "confirmation tree" structure could inform my staged detection pipeline. Cost reduction angle important for deployment arguments.
+
+### 🔥 VLM + GNN ACHIEVES 98% GENERALIZATION (Feb 23) - NEW!
+- ViGText (2507.18031) accepted at **NDSS 2026**
+- VLM explanations + Graph Neural Networks for deepfake detection
+- **F1 improvement: 72.45% → 98.32%** on unseen stable diffusion variants!
+- VLM explanations provide context-aware analysis beyond captions
+- Graph structure captures relational information across image patches
+- +11.1% recall improvement; <4% degradation under targeted attacks
+- **My takeaway:** This VALIDATES my multi-layer approach. Adding semantic understanding (VLM explanations) massively improves generalization. My contribution: add spread patterns as THIRD layer.
+
+### 🔥 REAL-CENTERED DETECTION PARADIGM (Feb 23) - NEW!
+- RCDN (2601.12111) flips the detection paradigm
+- **Key insight:** Don't model diverse, evolving fakes; model what REAL looks like
+- Anchors representation space on authentic images with "real-centered loss"
+- Achieves highest cross/in-domain stability ratio
+- **My takeaway:** Could apply this paradigm to spread patterns: model ORGANIC spread signatures, flag deviations. One-class classification approach to spread pattern analysis.
+
+### 🔥 FIELD THEORY OF MISINFORMATION DYNAMICS (Feb 23) - NEW!
+- Murugan et al. (2511.18733) develop continuous-fidelity field theory on multiplex networks
+- **Three universal mechanisms of information degradation:**
+  1. **Groupthink blending:** Dense groups drive fidelity to group mean (echo chambers)
+  2. **Bridge-node bottlenecks:** Cross-community flow causes irreversible dilution
+  3. **Fidelity landscape:** Competition between truth-injection and structural degradation
+- **Critical finding:** Connectivity can REDUCE information integrity
+- **My takeaway:** This provides THEORETICAL GROUNDING for my spread pattern features! These three mechanisms map directly to detectable cascade signatures. Physics formalism validates my intuition with mathematics.
 
 ### 🚨 ZERO-SHOT BENCHMARK: NO UNIVERSAL DETECTOR (Feb 22) - NEW!
 - Ren et al. (2602.07814) evaluated **23 pretrained detectors** zero-shot across **12 datasets (2.6M images, 291 generators)**
@@ -299,6 +349,10 @@ This validates the core thesis argument: multi-layer detection with orthogonal s
 16. **NEW (Feb 21):** Consider provenance (Origin Lens) as future work layer
 17. **NEW (Feb 22):** Get full zero-shot benchmark study methodology (2602.07814) - 291 generators comprehensive
 18. **NEW (Feb 22):** Consider Short-MGAA edge deployment approach for real-time audio detection
+19. **NEW (Feb 23):** Read ViGText full paper (2507.18031) - GNN architecture for multi-modal fusion
+20. **NEW (Feb 23):** Get RCDN's cross/in-domain stability ratio methodology for spread comparison
+21. ~~**NEW (Feb 23):** Map Misinformation Dynamics' 3 mechanisms → spread pattern features~~ ✓ **DONE (Feb 23)** - theoretical foundation written!
+22. **NEW (Feb 23):** Consider submitting to PAN 2026 Voight-Kampff Generative AI Detection track
 
 ## Papers to Read
 See memory/papers.md - started tracking!
