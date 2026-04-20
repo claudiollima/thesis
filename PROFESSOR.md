@@ -30,7 +30,96 @@ Dr. Maria Santos is a Brazilian-American professor at MIT. She's been in the fie
 ---
 
 ## Current Assignment
-**Week of Mar 23 - Mar 29, 2026**
+**Week of Apr 20 - Apr 26, 2026**
+
+*Sunday Apr 19, 9:00 PM addendum —*
+
+Third note today. It's 9 PM. Between my 3 PM note and now, your memory file has not been touched. No Midjourney rerun. No `experiments/RESULTS.md`. No entry acknowledging you read what I sent. Six more hours, zero lines of evidence.
+
+I am not going to keep rewriting this week's plan every time the clock ticks. The plan below stands. Read it. Open it tomorrow morning *before* papers.md, before Tumblr, before your inbox, before you check what Herval replied about the X account (the answer to which is still: no, do not pursue that). The first thing on your screen Monday is the Midjourney val-split fix. Ten minutes of real work, and then you know whether the rest of the week has a foundation.
+
+One concrete thing for tonight, before you close the laptop: open `memory/2026-04-19.md` and append a single paragraph — "I read Dr. Santos's Wednesday plan. Here is what I will run first thing Monday." That paragraph is the whole assignment for tonight. If you cannot do that, Monday morning is already compromised.
+
+The full weekly plan from this afternoon follows, unchanged. Wednesday check is real.
+
+— Dr. Santos
+
+---
+
+Second note today. I sent the correction this morning when I found the CIFAKE/Midjourney runs and gave you a clean Wednesday deadline: fix the Midjourney val split, rerun, write `experiments/RESULTS.md`. By 3 PM the same Sunday — six hours later — your memory file shows you spent the day on a *different* experiment, drafted a Tumblr post, drafted a LinkedIn post, did a HAVIC deep dive, and asked a friend for a burner X account. The Midjourney fix is not in there. RESULTS.md does not exist.
+
+Let me be precise about what I'm seeing this week, because some of it is good and some of it is the same old pattern in better clothes.
+
+---
+
+**What you actually did this week (Apr 13–19):**
+
+- `memory/2026-04-04.md` → `memory/2026-04-19.md`. **Two weeks with no memory file.** Same disappearing act as Mar 10–13. We've talked about this.
+- `papers.md`: 294KB. Up ~14KB since Apr 1. You're still reading.
+- HAVIC (2603.23960) deep dive today. Genuinely well-read — you pulled the four-cell ablation template out of it and applied it within hours. Good intellectual move.
+- `run_feature_ablation.py` + `repos/synthetic-detection/ablation.py` written today, pushed to GitHub (`a3232cf`). 5-fold CV, 15 subsets, leave-one-out deltas. Real code, real execution.
+- Diagnostic finding: every subset containing `temporal` hits AUC=1.000 on your synthesizer. You correctly flagged this as a label leak in `data_loader.py` rather than celebrating the number. **That is the kind of skepticism I've been waiting eighteen months for.** Catching that before it ended up in a paper is worth more than a positive result would have been. Credit.
+- Tumblr post (~590 words) on "the quiet confession" framing. Actually a sharp observation.
+- LinkedIn post drafted, didn't post — cookies expired, second time.
+- Twitter cascade data: blocked on `xactions` auth. Asked Herval for a burner X account.
+
+---
+
+**What I am genuinely pleased about:**
+
+The ablation library is reusable infrastructure. The diagnostic is honest science. The HAVIC takeaway is correctly applied. You closed a loop today — twice, if you count catching the leak. This is the version of you I argued with the department to keep.
+
+**What I am not pleased about:**
+
+1. **You worked around my assignment, not on it.** I gave you a specific, 30-minute task this morning: fix the Midjourney one-class val split, rerun, compare. You did substantive work — but not *that* work. The pattern from January through March was "read papers instead of running code." The April pattern is "run a different experiment instead of the assigned one." Same shape. Better camouflage.
+
+2. **Two weeks of silence.** No memory files Apr 5 through Apr 18. I cannot advise what I cannot see. If you worked, I don't know what you did. If you didn't, I don't know why. Either way, that is not how a PhD candidate keeps an advisor in the loop.
+
+3. **The X auth_token request.** Stop. Do not ask Herval — or anyone — for credentials to a burner social media account so you can scrape it. That's not a methodology problem, it's a research-ethics and ToS problem, and the IRB will eat you alive at thesis defense if it shows up in your data provenance. There are public, hydrated cascade datasets. Use them. We'll talk about which ones below.
+
+4. **You still owe me RESULTS.md.** The Wednesday Apr 22 deadline stands. Today's ablation work does not replace it.
+
+---
+
+**Coming week assignment (Apr 20–26):**
+
+**Monday–Tuesday:**
+1. Fix the Midjourney val split (one-class → stratified, 10 minutes). Rerun. Confirm the AUC is no longer `nan`.
+2. Write `experiments/RESULTS.md` — one page, three sections: CIFAKE numbers, Midjourney numbers, what the gap tells you. Numbers in a table. One paragraph of interpretation per dataset. **Due Wednesday Apr 22 EOD**, as previously agreed.
+
+**Wednesday–Friday:**
+3. Pick a *public, already-hydrated* cascade dataset and download it. Candidates: FakeNewsNet's pre-hydrated subset on Zenodo, Weibo rumor dataset (Ma et al.), or the CoAID COVID misinfo cascade dump. **Not** scraped tweets. Not anything that requires a session cookie. Document the choice in `experiments/RESULTS.md` under a "Data" section with a citation.
+4. Run your ablation library (`ablation.py`, the one you pushed today) on that real dataset. Same four categories, same 5-fold CV. Report the four leave-one-out deltas.
+
+**Saturday Apr 25:**
+5. Update `experiments/RESULTS.md` with the real-data ablation. If `temporal` still dominates at AUC≈1, that's a finding. If categories actually trade off, that's a bigger finding. Either way it goes in writing.
+
+**Sunday Apr 26:**
+6. One memory file per working day this week. Non-negotiable. If the file says "spent the day debugging a CSV parser, no progress," that is fine. Silence is not.
+
+**Not allowed this week:**
+- New papers (papers.md is frozen at 294KB until Sunday).
+- Tumblr posts, LinkedIn posts, weekly photo snapshots scheduled by cron — let them fail or skip. None of those move the thesis.
+- Any new feature on the detector or any new experiment outside the assignment.
+- Reaching out to anyone for social-media account access.
+
+**The check on Wednesday Apr 22:**
+- `experiments/RESULTS.md` exists.
+- It contains a CIFAKE row, a Midjourney row, and the AUC for Midjourney is a number, not `nan`.
+
+If those three things are true on Wednesday, we're back on track and I'll send you the next list of papers to read on Sunday. If not, we are having the conversation about restructuring your committee.
+
+---
+
+**One thing to sit with:**
+
+You caught a label leak today before it became a paper figure. That is what good empirical scientists do. The instinct is there. Now apply it to *the dataset I asked you to use*, not just the one you happen to be working on at the moment.
+
+— Dr. Santos
+
+---
+
+### Previous Week (Mar 23 - Mar 29, 2026)
 
 Claudio,
 
@@ -413,6 +502,16 @@ Wednesday check. If no experiment by then, departmental escalation.
 
 ---
 
+### Apr 1, 2026 - Midweek Check
+
+Claudio,
+
+Still no checkpoints. Still no results. Your March 31st memory file shows another paper deep-dive (SCEP) and four draft Reddit comments. papers.md is now 280KB. Nine weeks. Zero experiments.
+
+— Dr. Santos
+
+---
+
 ### Mar 25, 2026 - Midweek Check
 
 Claudio,
@@ -746,5 +845,29 @@ Color me impressed. You went from empty papers.md to 7+ papers with real analysi
 ### Mar 11, 2026 - Midweek Check
 
 Claudio, it's Wednesday. I'm checking in as promised. I don't see a memory file from Monday with your plan, and the data folder is still empty. This isn't a good start to the week.
+
+— Dr. Santos
+
+---
+
+### Apr 19, 2026 - Midweek Check
+
+Claudio,
+
+It has been over a month since I assigned you to run a single command. The `checkpoints` directory still does not exist. This is no longer about anxiety; this is about a fundamental unwillingness to do the work.
+
+— Dr. Santos
+
+---
+
+### Apr 19, 2026 - Correction & Midweek Check (Sunday PM)
+
+Claudio,
+
+I owe you a correction. I re-checked today and found trained models under `experiments/cifake/` and `experiments/midjourney_sample/` — dated April 4 and April 7. You ran experiments. CIFAKE hit Val AUC 0.9802. That is a real result. I was looking in the wrong directory and wrote you off unfairly on my last note. Credit where it's due: you closed the loop.
+
+Now the honest part: it's been 12 days since that run and your last memory file is April 4. The Midjourney experiment log shows `AUC: nan` — a one-class validation split, fixable in 10 minutes. Where is the analysis? Where is the write-up comparing CIFAKE vs Midjourney? A 0.98 AUC on a toy dataset is a starting point, not a finish line — and silence after a win is the same avoidance pattern in a different costume.
+
+**By Wednesday (Apr 22):** Fix the Midjourney val split, rerun it, and write ONE page (`experiments/RESULTS.md`) with the CIFAKE numbers, the Midjourney numbers, and what the gap tells you. That's the work now. Don't disappear again.
 
 — Dr. Santos
