@@ -1,0 +1,141 @@
+{
+  "config": {
+    "n_samples": 400,
+    "n_folds": 5,
+    "seed": 42,
+    "categories": {
+      "temporal": [
+        "time_to_first_share_seconds",
+        "total_shares",
+        "shares_per_hour",
+        "mean_inter_share_seconds",
+        "std_inter_share_seconds",
+        "inter_share_cv",
+        "burstiness",
+        "peak_hour"
+      ],
+      "cascade": [
+        "cascade_depth",
+        "cascade_breadth",
+        "depth_to_breadth_ratio",
+        "structural_virality",
+        "direct_reshare_fraction",
+        "deep_share_fraction"
+      ],
+      "account": [
+        "mean_account_age_days",
+        "std_account_age_days",
+        "new_account_fraction",
+        "mean_follower_count",
+        "std_follower_count",
+        "small_account_fraction",
+        "mean_following_count",
+        "verified_fraction",
+        "mean_follower_following_ratio"
+      ],
+      "coordination": [
+        "temporal_clustering_score",
+        "account_age_clustering"
+      ]
+    }
+  },
+  "results": {
+    "baseline": {
+      "temporal": {
+        "gb_auc_mean": 1.0,
+        "gb_auc_std": 0.0,
+        "gb_f1_mean": 1.0,
+        "lr_auc_mean": 0.99975
+      },
+      "cascade": {
+        "gb_auc_mean": 0.9803124999999999,
+        "gb_auc_std": 0.015973611050729846,
+        "gb_f1_mean": 0.9354916142776444,
+        "lr_auc_mean": 0.9821249999999999
+      },
+      "account": {
+        "gb_auc_mean": 1.0,
+        "gb_auc_std": 0.0,
+        "gb_f1_mean": 1.0,
+        "lr_auc_mean": 0.9998750000000001
+      },
+      "coordination": {
+        "gb_auc_mean": 0.5390624999999999,
+        "gb_auc_std": 0.02974041337137062,
+        "gb_f1_mean": 0.447756981580511,
+        "lr_auc_mean": 0.5144375
+      },
+      "temporal+cascade+account+coordination": {
+        "gb_auc_mean": 1.0,
+        "gb_auc_std": 0.0,
+        "gb_f1_mean": 1.0,
+        "lr_auc_mean": 1.0
+      }
+    },
+    "shuffled": {
+      "temporal": {
+        "gb_auc_mean": 0.5489375000000001,
+        "gb_auc_std": 0.06489703383052266,
+        "gb_f1_mean": 0.5409716395657592,
+        "lr_auc_mean": 0.51375
+      },
+      "cascade": {
+        "gb_auc_mean": 0.5004375,
+        "gb_auc_std": 0.049930263868719946,
+        "gb_f1_mean": 0.518373005684944,
+        "lr_auc_mean": 0.45075000000000004
+      },
+      "account": {
+        "gb_auc_mean": 0.523125,
+        "gb_auc_std": 0.0124011718196306,
+        "gb_f1_mean": 0.49690775204489573,
+        "lr_auc_mean": 0.4821250000000001
+      },
+      "coordination": {
+        "gb_auc_mean": 0.5297499999999999,
+        "gb_auc_std": 0.07811159885061886,
+        "gb_f1_mean": 0.4699818367216876,
+        "lr_auc_mean": 0.46731249999999996
+      },
+      "temporal+cascade+account+coordination": {
+        "gb_auc_mean": 0.529875,
+        "gb_auc_std": 0.06543651503556712,
+        "gb_f1_mean": 0.5144679546031811,
+        "lr_auc_mean": 0.501125
+      }
+    },
+    "neutral": {
+      "temporal": {
+        "gb_auc_mean": 0.5918125,
+        "gb_auc_std": 0.05139628512840201,
+        "gb_f1_mean": 0.5903018500486855,
+        "lr_auc_mean": 0.5569999999999999
+      },
+      "cascade": {
+        "gb_auc_mean": 0.5704374999999999,
+        "gb_auc_std": 0.03656415594540643,
+        "gb_f1_mean": 0.5341738120142878,
+        "lr_auc_mean": 0.5484375
+      },
+      "account": {
+        "gb_auc_mean": 0.532125,
+        "gb_auc_std": 0.06445759264819005,
+        "gb_f1_mean": 0.5207136549055889,
+        "lr_auc_mean": 0.5733750000000001
+      },
+      "coordination": {
+        "gb_auc_mean": 0.5913124999999999,
+        "gb_auc_std": 0.049276959626178236,
+        "gb_f1_mean": 0.49576998826662655,
+        "lr_auc_mean": 0.5248125
+      },
+      "temporal+cascade+account+coordination": {
+        "gb_auc_mean": 0.587875,
+        "gb_auc_std": 0.06293672417595311,
+        "gb_f1_mean": 0.5709888948506577,
+        "lr_auc_mean": 0.571375
+      }
+    }
+  },
+  "notes": "Three-condition diagnostic. 'baseline' uses the label-dependent synthesizer in data_loader.py. 'shuffled' permutes labels on the baseline feature matrix. 'neutral' uses NeutralFakeNewsNetLoader (organic generator for all items, true labels retained)."
+}
