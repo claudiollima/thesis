@@ -1,0 +1,222 @@
+{
+  "config": {
+    "sizes": [
+      200,
+      400,
+      600,
+      1000
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "n_folds": 5,
+    "feature_categories": {
+      "temporal": [
+        "time_to_first_share_seconds",
+        "total_shares",
+        "shares_per_hour",
+        "mean_inter_share_seconds",
+        "std_inter_share_seconds",
+        "inter_share_cv",
+        "burstiness",
+        "peak_hour"
+      ],
+      "cascade": [
+        "cascade_depth",
+        "cascade_breadth",
+        "depth_to_breadth_ratio",
+        "structural_virality",
+        "direct_reshare_fraction",
+        "deep_share_fraction"
+      ],
+      "account": [
+        "mean_account_age_days",
+        "std_account_age_days",
+        "new_account_fraction",
+        "mean_follower_count",
+        "std_follower_count",
+        "small_account_fraction",
+        "mean_following_count",
+        "verified_fraction",
+        "mean_follower_following_ratio"
+      ],
+      "coordination": [
+        "temporal_clustering_score",
+        "account_age_clustering"
+      ]
+    }
+  },
+  "raw": {
+    "200": {
+      "gb_auc": [
+        0.549,
+        0.615,
+        0.5355,
+        0.5695,
+        0.6809999999999999
+      ],
+      "gb_f1": [
+        0.5316624895572264,
+        0.6106032456260141,
+        0.5374056353003721,
+        0.5349236129723935,
+        0.6354276088819482
+      ],
+      "lr_auc": [
+        0.6319999999999999,
+        0.6515000000000001,
+        0.45,
+        0.5609999999999999,
+        0.644
+      ],
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    "400": {
+      "gb_auc": [
+        0.587875,
+        0.64025,
+        0.576875,
+        0.5211250000000001,
+        0.66175
+      ],
+      "gb_f1": [
+        0.5709888948506577,
+        0.5928374658891664,
+        0.5422905548169983,
+        0.4768185513412998,
+        0.6305628177196805
+      ],
+      "lr_auc": [
+        0.571375,
+        0.60825,
+        0.640125,
+        0.532375,
+        0.6477499999999999
+      ],
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    "600": {
+      "gb_auc": [
+        0.5975555555555556,
+        0.6577222222222222,
+        0.5793333333333333,
+        0.5712222222222222,
+        0.5907222222222221
+      ],
+      "gb_f1": [
+        0.5232428653687775,
+        0.5983864432172605,
+        0.5478990798555501,
+        0.5152791069492625,
+        0.5526431313643834
+      ],
+      "lr_auc": [
+        0.6008333333333333,
+        0.6497777777777778,
+        0.5833333333333333,
+        0.6026666666666667,
+        0.6004444444444446
+      ],
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    "1000": {
+      "gb_auc": [
+        0.6193200000000001,
+        0.6531399999999999,
+        0.60322,
+        0.57836,
+        0.61848
+      ],
+      "gb_f1": [
+        0.5797238454934039,
+        0.5770532071229978,
+        0.5469544171036709,
+        0.5329662606656439,
+        0.5638411990783124
+      ],
+      "lr_auc": [
+        0.5915999999999999,
+        0.60292,
+        0.60112,
+        0.57522,
+        0.5793
+      ],
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    }
+  },
+  "summary": {
+    "200": {
+      "gb_auc_mean": 0.5900000000000001,
+      "gb_auc_std": 0.052872488120004314,
+      "gb_auc_min": 0.5355,
+      "gb_auc_max": 0.6809999999999999,
+      "gb_f1_mean": 0.5700045184675909,
+      "gb_f1_std": 0.04402705009724233,
+      "lr_auc_mean": 0.5877000000000001,
+      "lr_auc_std": 0.07599578935704267,
+      "n_seeds": 5
+    },
+    "400": {
+      "gb_auc_mean": 0.5975750000000001,
+      "gb_auc_std": 0.04961203231072072,
+      "gb_auc_min": 0.5211250000000001,
+      "gb_auc_max": 0.66175,
+      "gb_f1_mean": 0.5626996569235605,
+      "gb_f1_std": 0.05171944186227634,
+      "lr_auc_mean": 0.5999749999999999,
+      "lr_auc_std": 0.04324504306854138,
+      "n_seeds": 5
+    },
+    "600": {
+      "gb_auc_mean": 0.599311111111111,
+      "gb_auc_std": 0.03058367594923642,
+      "gb_auc_min": 0.5712222222222222,
+      "gb_auc_max": 0.6577222222222222,
+      "gb_f1_mean": 0.5474901253510469,
+      "gb_f1_std": 0.029129487500561175,
+      "lr_auc_mean": 0.6074111111111111,
+      "lr_auc_std": 0.02231136564706512,
+      "n_seeds": 5
+    },
+    "1000": {
+      "gb_auc_mean": 0.6145039999999999,
+      "gb_auc_std": 0.024353481558085276,
+      "gb_auc_min": 0.57836,
+      "gb_auc_max": 0.6531399999999999,
+      "gb_f1_mean": 0.5601077858928059,
+      "gb_f1_std": 0.017863644483118384,
+      "lr_auc_mean": 0.5900319999999999,
+      "lr_auc_std": 0.011189942627198768,
+      "n_seeds": 5
+    }
+  },
+  "notes": "Sweeps n_samples x seed on NeutralFakeNewsNetLoader to characterize the residual ~0.59 AUC observed in run_leak_diagnostic.py (Apr 21). Stability across seeds and sample sizes indicates whether the residual is a real (small) signal in FakeNewsNet or sampling noise."
+}
