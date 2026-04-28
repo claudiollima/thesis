@@ -15,6 +15,9 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Local notes (not versioned)
+PROFESSOR.md
+
 # Large data files (keep CSV samples)
 *.pkl
 *.h5
